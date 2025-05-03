@@ -6,12 +6,13 @@ import requests
 
 
 def make_request():
-    return requests.get("https://esi.evetech.net/latest/status/?datasource=tranquility")
+    api_url = "https://esi.evetech.net/latest/status/?datasource=tranquility"
+    return requests.get(api_url).json()
 
 
 def entry(response):
     game = "EVE Online"
-    players = response.json()["players"]
+    players = response["players"]
     date = dt.today().isoformat()
     hour = time.strftime("%H", time.localtime())
 
