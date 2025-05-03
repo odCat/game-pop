@@ -1,8 +1,8 @@
-#! python
+#!python
 
 from datetime import date as dt
-import time
 import requests
+import time
 
 
 def make_request():
@@ -22,6 +22,7 @@ def entry(response):
             "date": date,
             "hour": hour
         }
+
 
 if __name__ == "__main__":
     print(entry(make_request()))
