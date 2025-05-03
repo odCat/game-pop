@@ -1,3 +1,5 @@
+#!python
+
 import pytest
 
 import game_pop as gp
