@@ -1,8 +1,7 @@
 #!python
 
-from datetime import date as dt
+import datetime
 import requests
-import time
 
 
 def make_request():
@@ -13,8 +12,9 @@ def make_request():
 def entry(response):
     game = "EVE Online"
     players = response["players"]
-    date = dt.today().isoformat()
-    hour = time.strftime("%H", time.localtime())
+    date_and_time = datetime.datetime.now(datetime.UTC)
+    date = date_and_time.date().isoformat()
+    hour = date_and_time.hour
 
     return {
             "game": game,
