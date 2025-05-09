@@ -6,7 +6,10 @@ import requests
 
 def make_request():
     api_url = "https://esi.evetech.net/latest/status/?datasource=tranquility"
-    return requests.get(api_url).json()
+    request = requests.get(api_url)
+    if request.status_code != 200:
+        return {}
+    return request.json()
 
 
 def entry(response):
