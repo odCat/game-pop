@@ -9,14 +9,16 @@ import storage
 
 class TestStorage:
 
+    TEST_DB_FILE = "test_game_statistics.db"
+
     @pytest.fixture(scope="class", autouse=True)
     def db_connection(self):
-        db = storage.Storage("test_game_population.db")
+        db = storage.Storage(self.TEST_DB_FILE)
 
         yield db
 
         db.connection.close()
-        os.remove('test_game_population.db')
+        os.remove(self.TEST_DB_FILE)
 
     @pytest.fixture(autouse=True)
     def create_table(self, db_connection):
