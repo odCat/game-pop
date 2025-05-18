@@ -20,7 +20,7 @@ class TestStorage:
 
     @pytest.fixture(autouse=True)
     def create_table(self, db_connection):
-        db_connection.create_table_if_not_exists("test_population")
+        db_connection.create_population_table("test_population")
 
         yield
 

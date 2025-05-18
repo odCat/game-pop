@@ -11,7 +11,7 @@ class Storage:
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
-    def create_table_if_not_exists(self, table="population"):
+    def create_population_table(self, table="population"):
         query = f'''
             CREATE TABLE IF NOT EXISTS {table} (
                 game TEXT NOT NULL,
@@ -37,7 +37,7 @@ class Storage:
         return result
 
     def insert(self, entry, table="population"):
-        self.create_table_if_not_exists(table)
+        self.create_population_table(table)
         entry["table"] = table
 
         is_present = self.is_entry_present(entry)
