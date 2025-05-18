@@ -38,7 +38,7 @@ class Storage:
         self.connection.commit()
         return result
 
-    def insert(self, entry, table="population"):
+    def insert_into_population(self, entry, table="population"):
         self.create_population_table(table)
         entry["table"] = table
 
@@ -59,5 +59,5 @@ if __name__ == '__main__':
         'server_version': '2889100',
         'start_time': '2025-05-03T11:01:08Z'
     }
-    storage.insert(gp.entry(response))
+    storage.insert_into_population(gp.entry(response))
     print(storage.cursor.execute('''SELECT * FROM population;''').fetchall())

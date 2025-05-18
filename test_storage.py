@@ -32,8 +32,8 @@ class TestStorage:
             'server_version': '2889100',
             'start_time': '2025-05-03T11:01:08Z'
         }
-        db_connection.insert(gp.entry(response), "test_population")
-        db_connection.insert(gp.entry(response), "test_population")
+        db_connection.insert_into_population(gp.entry(response), "test_population")
+        db_connection.insert_into_population(gp.entry(response), "test_population")
 
         query = "SELECT COUNT(*) FROM test_population"
         actual = db_connection.cursor.execute(query).fetchone()[0]
