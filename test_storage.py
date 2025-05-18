@@ -21,7 +21,7 @@ class TestStorage:
         os.remove(self.TEST_DB_FILE)
 
     @pytest.fixture(autouse=True)
-    def create_table(self, db_connection):
+    def create_population_table(self, db_connection):
         db_connection.create_population_table("test_population")
 
         yield
