@@ -7,7 +7,9 @@ import game_pop as gp
 
 class Storage:
 
-    def __init__(self, db_file="game_population.db"):
+    DB_FILE = "game_statistics.db"
+
+    def __init__(self, db_file=DB_FILE):
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
