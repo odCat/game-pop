@@ -1,0 +1,22 @@
+### Python ###
+venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+### IntelliJ IDEA ###
+.idea/
+
+### VS Code ###
+.vscode/
+
+### Vim temp files ###
+.*.swl
+.*.swm
+.*.swn
+.*.swo
+.*.swp
+*.swp
+.*.un~
+*.*~
+*~
