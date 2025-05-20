@@ -54,10 +54,6 @@ class Storage:
 
 if __name__ == '__main__':
     storage = Storage()
-    response = {
-        'players': 29896,
-        'server_version': '2889100',
-        'start_time': '2025-05-03T11:01:08Z'
-    }
+    response = gp.make_request()
     storage.insert_into_population(gp.entry(response))
     print(storage.cursor.execute('''SELECT * FROM population;''').fetchall())
