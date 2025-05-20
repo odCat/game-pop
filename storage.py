@@ -54,6 +54,6 @@ class Storage:
 
 if __name__ == '__main__':
     storage = Storage()
-    response = gp.make_request()
-    storage.insert_into_population(gp.entry(response))
-    print(storage.cursor.execute('''SELECT * FROM population;''').fetchall())
+    entry = gp.entry(gp.make_request())
+    print(f"Trying to insert: {entry}")
+    storage.insert_into_population(entry)
