@@ -54,6 +54,6 @@ class Storage:
 
 if __name__ == '__main__':
     storage = Storage()
-    entry = gp.entry(gp.make_request())
-    print(f"Trying to insert: {entry}")
-    storage.insert_into_population(entry)
+    to_insert = gp.entry(gp.make_request())
+    print(f"Trying to insert: {to_insert}")
+    storage.insert_into_population(to_insert)
